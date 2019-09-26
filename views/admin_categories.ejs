@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Lumino UI Elements</title>
+	<link href="/admin/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/admin/css/font-awesome.min.css" rel="stylesheet">
+	<link href="/admin/css/datepicker3.css" rel="stylesheet">
+	<link href="/admin/css/styles.css" rel="stylesheet">
+	
+	<!--Custom Font-->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+	<!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<% include admin_header%>
+		
+	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+		<div class="row">
+			<ol class="breadcrumb">
+				<li><a href="#">
+					<em class="fa fa-home"></em>
+				</a></li>
+				<li class="active">Category</li>
+			</ol>
+		</div><!--/.row-->
+		
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header">Category</h1>
+			</div>
+		</div><!--/.row-->
+				<div class="panel panel-default">
+					<div class="panel-heading">List</div>
+					<div class="panel-body">
+						<div class="col-md-6">
+							<form role="form" method="GET">
+                                <a href="http://localhost:3333/admin/add_category" class="btn btn-primary height-auto btn-sm">Add category</a><br/><br/>
+                                <table class="table table-bordered">
+                                    <thead>
+                                      <tr>
+                                        <th>Category name</th>
+                                        <th>Option</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% category.forEach(function(item){%>
+                                            <tr>
+                                                <td><%=item.catName%></th>
+                                                <td>
+                                                    <a href="http://localhost:3333/admin/edit_category&<%=item._id%>"><em class="fa fa-edit"> Edit</em></a>&emsp;
+                                                    <a href="http://localhost:3333/admin/delete_category&<%=item._id%>"><em class="fa fa-remove"> Remove</em></a>
+                                                </td>
+                                            </tr>
+                                        <%})%>
+                                        
+                                    </tbody>
+                                  </table>
+							</form>
+						</div>
+					</div>
+				</div><!-- /.panel-->
+			</div><!-- /.col-->
+			<div class="col-sm-12">
+				<p class="back-link">Lumino Theme by <a href="https://www.medialoot.com">Medialoot</a></p>
+			</div>
+		</div><!-- /.row -->
+	</div><!--/.main-->
+	
+<script src="/admin/js/jquery-1.11.1.min.js"></script>
+	<script src="/admin/js/bootstrap.min.js"></script>
+	<script src="/admin/js/chart.min.js"></script>
+	<script src="/admin/js/chart-data.js"></script>
+	<script src="/admin/js/easypiechart.js"></script>
+	<script src="/admin/js/easypiechart-data.js"></script>
+	<script src="/admin/js/bootstrap-datepicker.js"></script>
+	<script src="/admin/js/custom.js"></script>
+	
+</body>
+</html>
